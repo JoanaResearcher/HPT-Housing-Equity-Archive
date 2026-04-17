@@ -10,11 +10,9 @@
       --odu-blue-dark: #00364d;
       --crimson: #d32f2f;
       --crimson-dark: #a92323;
-      --bg: #f4f8fb;
-      --panel: #ffffff;
+      --line: #d7e2e9;
       --text: #142430;
       --muted: #556975;
-      --line: #d7e2e9;
       --shadow: 0 18px 40px rgba(0, 42, 61, 0.12);
       --radius: 22px;
       --header-height: 88px;
@@ -51,6 +49,7 @@
     button {
       cursor: pointer;
       border: none;
+      background: transparent;
     }
 
     .site-header {
@@ -60,7 +59,7 @@
       right: 0;
       z-index: 1000;
       background: var(--odu-blue);
-      color: #ffffff;
+      color: #fff;
       box-shadow: 0 8px 24px rgba(0, 42, 61, 0.18);
     }
 
@@ -105,8 +104,7 @@
       padding: 12px 18px;
       border-radius: 999px;
       border: 1px solid rgba(255, 255, 255, 0.22);
-      color: #ffffff;
-      background: transparent;
+      color: #fff;
       font-weight: 700;
       transition: background 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
     }
@@ -116,7 +114,9 @@
     .lang-toggle:hover,
     .lang-toggle:focus-visible,
     .card-link:hover,
-    .card-link:focus-visible {
+    .card-link:focus-visible,
+    .partner-link:hover,
+    .partner-link:focus-visible {
       transform: translateY(-1px);
     }
 
@@ -128,7 +128,7 @@
     }
 
     .lang-toggle.is-spanish {
-      border-color: rgba(255, 255, 255, 0.36);
+      border-color: rgba(255, 255, 255, 0.34);
       background: rgba(255, 255, 255, 0.16);
     }
 
@@ -146,9 +146,10 @@
     }
 
     .hero-panel,
+    .theory-panel,
     .profile-panel,
-    .gallery-panel,
-    .theory-panel {
+    .partners-panel,
+    .gallery-panel {
       background: rgba(255, 255, 255, 0.97);
       border: 1px solid var(--line);
       border-radius: var(--radius);
@@ -158,7 +159,7 @@
     .hero-panel {
       flex: 2 1 640px;
       padding: 34px;
-      color: #ffffff;
+      color: #fff;
       background:
         linear-gradient(135deg, rgba(0, 80, 115, 0.98), rgba(0, 54, 77, 0.96)),
         var(--odu-blue);
@@ -194,7 +195,7 @@
       font-size: clamp(2.3rem, 5vw, 4.4rem);
       line-height: 0.98;
       letter-spacing: -0.04em;
-      max-width: 10ch;
+      max-width: 12ch;
     }
 
     .hero-panel p {
@@ -234,20 +235,24 @@
     }
 
     .theory-panel h2,
-    .profile-panel h2,
-    .gallery-panel h2 {
+    .partners-panel h2,
+    .gallery-panel h2,
+    .profile-panel h2 {
       margin: 0 0 14px;
       font-size: clamp(1.55rem, 3vw, 2.15rem);
       line-height: 1.1;
       color: var(--odu-blue-dark);
     }
 
-    .theory-panel p {
+    .theory-panel p,
+    .partners-panel p,
+    .gallery-intro {
       margin: 0;
       color: var(--muted);
     }
 
     .profile-panel,
+    .partners-panel,
     .gallery-panel {
       padding: 30px;
       margin-bottom: 24px;
@@ -255,7 +260,7 @@
 
     .profile-panel {
       background: #101f29;
-      color: #ffffff;
+      color: #fff;
     }
 
     .profile-panel .panel-label {
@@ -263,7 +268,7 @@
     }
 
     .profile-panel h2 {
-      color: #ffffff;
+      color: #fff;
     }
 
     .profile-panel p {
@@ -272,9 +277,51 @@
       font-size: 1rem;
     }
 
+    .partners-panel {
+      background: linear-gradient(135deg, rgba(0, 80, 115, 0.08), rgba(211, 47, 47, 0.06));
+    }
+
+    .partners-panel p {
+      margin-bottom: 18px;
+      max-width: 68ch;
+    }
+
+    .partners-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .partner-link {
+      flex: 1 1 260px;
+      min-width: 0;
+      padding: 18px 20px;
+      border-radius: 18px;
+      border: 1px solid rgba(0, 80, 115, 0.12);
+      background: rgba(255, 255, 255, 0.94);
+      box-shadow: 0 10px 22px rgba(0, 42, 61, 0.07);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+
+    .partner-link:hover,
+    .partner-link:focus-visible {
+      box-shadow: 0 16px 28px rgba(0, 42, 61, 0.1);
+      border-color: rgba(211, 47, 47, 0.34);
+    }
+
+    .partner-link strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--odu-blue-dark);
+      font-size: 1.02rem;
+    }
+
+    .partner-link span {
+      color: var(--muted);
+    }
+
     .gallery-intro {
       margin: 0 0 20px;
-      color: var(--muted);
       max-width: 68ch;
     }
 
@@ -316,7 +363,7 @@
       padding: 12px 18px;
       border-radius: 999px;
       background: var(--crimson);
-      color: #ffffff;
+      color: #fff;
       font-weight: 800;
       transition: background 0.2s ease, transform 0.2s ease;
     }
@@ -364,9 +411,10 @@
       }
 
       .hero-panel,
+      .theory-panel,
       .profile-panel,
-      .gallery-panel,
-      .theory-panel {
+      .partners-panel,
+      .gallery-panel {
         padding: 22px;
       }
 
@@ -374,7 +422,8 @@
         max-width: none;
       }
 
-      .tool-card {
+      .tool-card,
+      .partner-link {
         flex-basis: 100%;
       }
     }
@@ -385,11 +434,11 @@
     <div class="header-inner">
       <div class="brand-block">
         <div class="brand-title" data-i18n="brandTitle">Joana Camp | Lead Technical Researcher</div>
-        <div class="brand-subtitle" data-i18n="brandSubtitle">ODU Senior Training Specialist | 3.95 GPA</div>
+        <div class="brand-subtitle" data-i18n="brandSubtitle">Old Dominion University | Darden College of Education and Professional Studies</div>
       </div>
       <div class="header-actions">
         <a class="nav-link" data-i18n="archiveLink" href="https://substack.com/@livinglabhcv" target="_blank" rel="noreferrer">Research Archive</a>
-        <button class="lang-toggle" id="languageToggle" type="button" aria-pressed="false">Switch to Spanish / Cambiar a Español</button>
+        <button class="lang-toggle" id="languageToggle" type="button" aria-pressed="false">Switch to Spanish / Cambiar a Espanol</button>
       </div>
     </div>
   </header>
@@ -399,10 +448,7 @@
       <article class="hero-panel">
         <div class="eyebrow" data-i18n="heroEyebrow">Professional Portfolio</div>
         <h1 data-i18n="heroTitle">The Living Lab</h1>
-        <p data-i18n="heroBody">
-          Research, technical prototyping, and human performance inquiry focused on housing systems, administrative friction,
-          and AI-supported regulatory tools for vulnerable populations.
-        </p>
+        <p data-i18n="heroBody">Research, technical prototyping, and human performance inquiry focused on housing systems, administrative friction, and AI-supported regulatory tools for vulnerable populations.</p>
         <div class="hero-chips">
           <div class="chip" data-i18n="chipOne">Human Performance Technology</div>
           <div class="chip" data-i18n="chipTwo">Housing Systems Research</div>
@@ -413,29 +459,36 @@
       <aside class="theory-panel" aria-labelledby="theory-heading">
         <p class="panel-label" data-i18n="theoryLabel">Linguistic Equity Framework</p>
         <h2 id="theory-heading" data-i18n="theoryHeading">Why the Language Toggle Matters</h2>
-        <p data-i18n="theoryBody">
-          This bilingual design supports linguistic equity by reducing the Bandwidth Tax for non-English primary households.
-          Pairing language access with consistent card-based context helps eliminate the Signature Gap and lowers the risk of
-          misunderstanding at critical decision points.
-        </p>
+        <p data-i18n="theoryBody">This bilingual design supports linguistic equity by reducing the Bandwidth Tax for non-English primary households. Pairing language access with consistent card-based context helps eliminate the Signature Gap and lowers the risk of misunderstanding at critical decision points.</p>
       </aside>
     </section>
 
     <section class="profile-panel" aria-labelledby="profile-heading">
       <p class="panel-label" data-i18n="profileLabel">The Professional Profile</p>
       <h2 id="profile-heading" data-i18n="profileHeading">Professional Identity &amp; Research Trajectory</h2>
-      <p data-i18n="profileBody">
-        I am an Occupational and Technical Studies Senior at Old Dominion University (3.95 GPA) and the Lead Technical Researcher for The Living Lab. My work is grounded in nearly 30 years of lived experience navigating federal housing systems, which I transitioned into a formal ethnographic research project in Fall 2025 to mitigate the "Bandwidth Tax"—the 30% drain on cognitive resources caused by administrative friction. Using AI-assisted coding, I developed the RFTA Validator, a diagnostic tool officially submitted to the OpenAI Codex Creator Challenge via Handshake. This tool replaces 20-page "Information Dumps" with bilingual "Hard Stops" to eliminate the "Signature Gap" and prevent program attrition. My current trajectory involves presenting this research at the ODU Knowledge & Creativity Expo on April 22, 2026, and scaling the initiative through the $250,000 Virginia Housing Flagship Training Grant and the $2 million 2026 Housing Affordability Breakthrough Challenge (due May 15). I am preparing for doctoral studies in Human Performance Technology (HPT) to investigate AI-driven regulatory compliance for vulnerable populations.
-      </p>
+      <p data-i18n="profileBody">I am an Occupational and Technical Studies Senior at Old Dominion University (3.95 GPA) and the Lead Technical Researcher for The Living Lab. My work is grounded in nearly 30 years of lived experience navigating federal housing systems, which I transitioned into a formal ethnographic research project in Fall 2025 to mitigate the "Bandwidth Tax" - the 30% drain on cognitive resources caused by administrative friction. Using AI-assisted coding, I developed the RFTA Validator, a diagnostic tool officially submitted to the OpenAI Codex Creator Challenge via Handshake. This tool replaces 20-page "Information Dumps" with bilingual "Hard Stops" to eliminate the "Signature Gap" and prevent program attrition. My current trajectory involves presenting this research at the ODU Knowledge & Creativity Expo on April 22, 2026, and scaling the initiative through the $250,000 Virginia Housing Flagship Training Grant and the $2 million 2026 Housing Affordability Breakthrough Challenge (due May 15). I am preparing for doctoral studies in Human Performance Technology (HPT) to investigate AI-driven regulatory compliance for vulnerable populations.</p>
+    </section>
+
+    <section class="partners-panel" aria-labelledby="partners-heading">
+      <p class="panel-label" data-i18n="partnersLabel">Collaborative Partners</p>
+      <h2 id="partners-heading" data-i18n="partnersHeading">Community Partnerships &amp; Grant Coordination</h2>
+      <p data-i18n="partnersBody">Collaborating with CVRC and RIL to scale The Living Lab research through the 2026 Housing Affordability Breakthrough Challenge.</p>
+      <div class="partners-grid">
+        <a class="partner-link" href="https://cvrc-va.org/" target="_blank" rel="noreferrer">
+          <strong data-i18n="partnerOneTitle">Central Virginia Resource Corp (CVRC)</strong>
+          <span data-i18n="partnerOneBody">Regional partner supporting coordination, community infrastructure, and grant-facing collaboration.</span>
+        </a>
+        <a class="partner-link" href="https://www.ril-va.org/" target="_blank" rel="noreferrer">
+          <strong data-i18n="partnerTwoTitle">Richmond Independent Living (RIL)</strong>
+          <span data-i18n="partnerTwoBody">Community partner advancing accessibility, independent living, and implementation alignment.</span>
+        </a>
+      </div>
     </section>
 
     <section class="gallery-panel" aria-labelledby="ecosystem-heading">
       <p class="panel-label" data-i18n="galleryLabel">The Research Ecosystem</p>
       <h2 id="ecosystem-heading" data-i18n="galleryHeading">Tool and Archive Gallery</h2>
-      <p class="gallery-intro" data-i18n="galleryIntro">
-        This responsive Flexbox card gallery keeps each title, description, and action together inside the same visual card,
-        supporting contiguity, language access, and lower cognitive load.
-      </p>
+      <p class="gallery-intro" data-i18n="galleryIntro">This responsive Flexbox card gallery keeps each title, description, and action together inside the same visual card, supporting contiguity, language access, and lower cognitive load.</p>
 
       <div class="card-grid">
         <article class="tool-card">
@@ -443,61 +496,51 @@
           <p data-i18n="card1Body">Bilingual validator for detecting critical errors and closing the signature gap before benefit loss occurs.</p>
           <a class="card-link" data-i18n="launchButton" href="https://joanaresearcher.github.io/the-living-lab/" target="_blank" rel="noreferrer">Launch Prototype</a>
         </article>
-
         <article class="tool-card">
           <h3 data-i18n="card2Title">Systemic Friction Map</h3>
           <p data-i18n="card2Body">Visual map of structural friction points that wear down families navigating housing systems.</p>
           <a class="card-link" data-i18n="launchButton" href="https://joanaresearcher.github.io/The-Living-Lab-Systemic-Friction-Map/" target="_blank" rel="noreferrer">Launch Prototype</a>
         </article>
-
         <article class="tool-card">
           <h3 data-i18n="card3Title">Housing Tracker</h3>
           <p data-i18n="card3Body">Research tracker designed to expand transparency and improve access to housing opportunities.</p>
           <a class="card-link" data-i18n="launchButton" href="https://joanaresearcher.github.io/housing-tracker-research/" target="_blank" rel="noreferrer">Launch Prototype</a>
         </article>
-
         <article class="tool-card">
           <h3 data-i18n="card4Title">Stability Simulation</h3>
           <p data-i18n="card4Body">Simulation model for exploring how small decisions create cumulative housing stability effects.</p>
           <a class="card-link" data-i18n="launchButton" href="https://joanaresearcher.github.io/The_Living_Lab_Systemic_Stability_Simulation/" target="_blank" rel="noreferrer">Launch Prototype</a>
         </article>
-
         <article class="tool-card">
           <h3 data-i18n="card5Title">Administrative Impact Calculator</h3>
           <p data-i18n="card5Body">Calculator for estimating the hidden administrative burden created by complex processes.</p>
           <a class="card-link" data-i18n="launchButton" href="https://joanaresearcher.github.io/The-Living-Lab-Administrative-Impact-Calculator/" target="_blank" rel="noreferrer">Launch Prototype</a>
         </article>
-
         <article class="tool-card">
           <h3 data-i18n="card6Title">Insight Engine</h3>
           <p data-i18n="card6Body">Insight engine that translates dense observations into readable and actionable findings.</p>
           <a class="card-link" data-i18n="launchButton" href="https://joanaresearcher.github.io/-Living-Lab-Insight-Engine/" target="_blank" rel="noreferrer">Launch Prototype</a>
         </article>
-
         <article class="tool-card">
           <h3 data-i18n="card7Title">Linguistic Bridge</h3>
           <p data-i18n="card7Body">Language bridge prototype for improving communication equity across agencies and households.</p>
           <a class="card-link" data-i18n="launchButton" href="https://joanaresearcher.github.io/The-Living-Lab-Linguistic-Bridge/" target="_blank" rel="noreferrer">Launch Prototype</a>
         </article>
-
         <article class="tool-card">
           <h3 data-i18n="card8Title">Deployment Roadmap</h3>
           <p data-i18n="card8Body">Implementation roadmap for supporting human-centered agency deployment and adoption.</p>
           <a class="card-link" data-i18n="launchButton" href="https://joanaresearcher.github.io/Teaching-Agency-Deployment-Roadmap/" target="_blank" rel="noreferrer">Launch Prototype</a>
         </article>
-
         <article class="tool-card">
           <h3 data-i18n="card9Title">App Shell Prototype</h3>
           <p data-i18n="card9Body">Foundational app shell built for clarity, accessibility, and task-centered navigation.</p>
           <a class="card-link" data-i18n="launchButton" href="https://joanaresearcher.github.io/RFTA_APP_SHELL_PROTOTYPE01/" target="_blank" rel="noreferrer">Launch Prototype</a>
         </article>
-
         <article class="tool-card">
           <h3 data-i18n="card10Title">Bandwidth Tax Challenge</h3>
           <p data-i18n="card10Body">Concept prototype showing how administrative friction consumes limited cognitive resources.</p>
           <a class="card-link" data-i18n="launchButton" href="https://joanaresearcher.github.io/The-Bandwidth-Tax-Challenge/" target="_blank" rel="noreferrer">Launch Prototype</a>
         </article>
-
         <article class="tool-card">
           <h3 data-i18n="card11Title">Substack Archive</h3>
           <p data-i18n="card11Body">Public research archive documenting Living Lab progress, reflections, and evidence.</p>
@@ -507,18 +550,16 @@
     </section>
   </main>
 
-  <footer data-i18n="footerText">
-    Mitigating the Bandwidth Tax through Human Performance Technology (HPT). Established Fall 2025.
-  </footer>
+  <footer data-i18n="footerText">Mitigating the Bandwidth Tax through Human Performance Technology (HPT). Established Fall 2025.</footer>
 
   <script>
     const translations = {
       en: {
         pageTitle: "Joana Camp | Lead Technical Researcher",
         brandTitle: "Joana Camp | Lead Technical Researcher",
-        brandSubtitle: "ODU Senior Training Specialist | 3.95 GPA",
+        brandSubtitle: "Old Dominion University | Darden College of Education and Professional Studies",
         archiveLink: "Research Archive",
-        toggleButton: "Switch to Spanish / Cambiar a Español",
+        toggleButton: "Switch to Spanish / Cambiar a Espanol",
         heroEyebrow: "Professional Portfolio",
         heroTitle: "The Living Lab",
         heroBody: "Research, technical prototyping, and human performance inquiry focused on housing systems, administrative friction, and AI-supported regulatory tools for vulnerable populations.",
@@ -530,7 +571,14 @@
         theoryBody: "This bilingual design supports linguistic equity by reducing the Bandwidth Tax for non-English primary households. Pairing language access with consistent card-based context helps eliminate the Signature Gap and lowers the risk of misunderstanding at critical decision points.",
         profileLabel: "The Professional Profile",
         profileHeading: "Professional Identity & Research Trajectory",
-        profileBody: "I am an Occupational and Technical Studies Senior at Old Dominion University (3.95 GPA) and the Lead Technical Researcher for The Living Lab. My work is grounded in nearly 30 years of lived experience navigating federal housing systems, which I transitioned into a formal ethnographic research project in Fall 2025 to mitigate the \"Bandwidth Tax\"—the 30% drain on cognitive resources caused by administrative friction. Using AI-assisted coding, I developed the RFTA Validator, a diagnostic tool officially submitted to the OpenAI Codex Creator Challenge via Handshake. This tool replaces 20-page \"Information Dumps\" with bilingual \"Hard Stops\" to eliminate the \"Signature Gap\" and prevent program attrition. My current trajectory involves presenting this research at the ODU Knowledge & Creativity Expo on April 22, 2026, and scaling the initiative through the $250,000 Virginia Housing Flagship Training Grant and the $2 million 2026 Housing Affordability Breakthrough Challenge (due May 15). I am preparing for doctoral studies in Human Performance Technology (HPT) to investigate AI-driven regulatory compliance for vulnerable populations.",
+        profileBody: "I am an Occupational and Technical Studies Senior at Old Dominion University (3.95 GPA) and the Lead Technical Researcher for The Living Lab. My work is grounded in nearly 30 years of lived experience navigating federal housing systems, which I transitioned into a formal ethnographic research project in Fall 2025 to mitigate the \"Bandwidth Tax\" - the 30% drain on cognitive resources caused by administrative friction. Using AI-assisted coding, I developed the RFTA Validator, a diagnostic tool officially submitted to the OpenAI Codex Creator Challenge via Handshake. This tool replaces 20-page \"Information Dumps\" with bilingual \"Hard Stops\" to eliminate the \"Signature Gap\" and prevent program attrition. My current trajectory involves presenting this research at the ODU Knowledge & Creativity Expo on April 22, 2026, and scaling the initiative through the $250,000 Virginia Housing Flagship Training Grant and the $2 million 2026 Housing Affordability Breakthrough Challenge (due May 15). I am preparing for doctoral studies in Human Performance Technology (HPT) to investigate AI-driven regulatory compliance for vulnerable populations.",
+        partnersLabel: "Collaborative Partners",
+        partnersHeading: "Community Partnerships & Grant Coordination",
+        partnersBody: "Collaborating with CVRC and RIL to scale The Living Lab research through the 2026 Housing Affordability Breakthrough Challenge.",
+        partnerOneTitle: "Central Virginia Resource Corp (CVRC)",
+        partnerOneBody: "Regional partner supporting coordination, community infrastructure, and grant-facing collaboration.",
+        partnerTwoTitle: "Richmond Independent Living (RIL)",
+        partnerTwoBody: "Community partner advancing accessibility, independent living, and implementation alignment.",
         galleryLabel: "The Research Ecosystem",
         galleryHeading: "Tool and Archive Gallery",
         galleryIntro: "This responsive Flexbox card gallery keeps each title, description, and action together inside the same visual card, supporting contiguity, language access, and lower cognitive load.",
@@ -560,50 +608,57 @@
         footerText: "Mitigating the Bandwidth Tax through Human Performance Technology (HPT). Established Fall 2025."
       },
       es: {
-        pageTitle: "Joana Camp | Investigadora Técnica Principal",
-        brandTitle: "Joana Camp | Investigadora Técnica Principal",
-        brandSubtitle: "Especialista Superior en Capacitación de ODU | GPA de 3.95",
-        archiveLink: "Archivo de Investigación",
-        toggleButton: "Switch to English / Cambiar a Inglés",
+        pageTitle: "Joana Camp | Investigadora Tecnica Principal",
+        brandTitle: "Joana Camp | Investigadora Tecnica Principal",
+        brandSubtitle: "Old Dominion University | Darden College of Education and Professional Studies",
+        archiveLink: "Archivo de Investigacion",
+        toggleButton: "Switch to English / Cambiar a Ingles",
         heroEyebrow: "Portafolio Profesional",
-        heroTitle: "The Living Lab",
-        heroBody: "Investigación, prototipado técnico e indagación en desempeño humano enfocados en sistemas de vivienda, fricción administrativa y herramientas regulatorias apoyadas por IA para poblaciones vulnerables.",
-        chipOne: "Tecnología del Desempeño Humano",
-        chipTwo: "Investigación de Sistemas de Vivienda",
-        chipThree: "Codificación Asistida por IA",
-        theoryLabel: "Marco de Equidad Lingüística",
-        theoryHeading: "Por Qué Importa el Cambio de Idioma",
-        theoryBody: "Este diseño bilingüe apoya la equidad lingüística al reducir el Impuesto de Ancho de Banda para hogares cuyo idioma principal no es el inglés. Vincular el acceso lingüístico con tarjetas de contexto consistentes ayuda a eliminar la Brecha de Firmas y reduce el riesgo de malentendidos en puntos críticos de decisión.",
+        heroTitle: "El Laboratorio Viviente",
+        heroBody: "Investigacion, prototipado tecnico e indagacion en desempeno humano enfocados en sistemas de vivienda, friccion administrativa y herramientas regulatorias apoyadas por IA para poblaciones vulnerables.",
+        chipOne: "Tecnologia del Desempeno Humano",
+        chipTwo: "Investigacion de Sistemas de Vivienda",
+        chipThree: "Codificacion Asistida por IA",
+        theoryLabel: "Marco de Equidad Linguistica",
+        theoryHeading: "Por Que Importa el Cambio de Idioma",
+        theoryBody: "Este diseno bilingue apoya la equidad linguistica al reducir el Impuesto de Ancho de Banda para hogares cuyo idioma principal no es el ingles. Vincular el acceso linguistico con tarjetas de contexto consistentes ayuda a eliminar la Brecha de Firmas y reduce el riesgo de malentendidos en puntos criticos de decision.",
         profileLabel: "Perfil Profesional",
-        profileHeading: "Identidad Profesional y Trayectoria de Investigación",
-        profileBody: "Soy estudiante de último año de Estudios Ocupacionales y Técnicos en la Universidad Old Dominion (GPA de 3.95) e Investigadora Técnica Principal de The Living Lab. Mi trabajo se basa en casi 30 años de experiencia vivida navegando los sistemas federales de vivienda, los cuales convertí en un proyecto de investigación etnográfica formal en el otoño de 2025 para mitigar el \"Impuesto de Ancho de Banda\" (Bandwidth Tax), el consumo del 30% de los recursos cognitivos causado por la fricción administrativa. Utilizando codificación asistida por IA, desarrollé el Validador RFTA, una herramienta de diagnóstico presentada oficialmente al OpenAI Codex Creator Challenge. Esta herramienta reemplaza las \"descargas de información\" de 20 páginas con \"paradas obligatorias\" bilingües para eliminar la \"brecha de firmas\" y evitar la deserción del programa. Mi trayectoria actual incluye presentar esta investigación en la Expo de Conocimiento y Creatividad de ODU el 22 de abril de 2026, y escalar la iniciativa a través de la Subvención de Capacitación Virginia Housing Flagship de $250,000 y el Desafío Breakthrough de Asequibilidad de Vivienda 2026 de $2 millones.",
-        galleryLabel: "Ecosistema de Investigación",
-        galleryHeading: "Galería de Herramientas y Archivo",
-        galleryIntro: "Esta galería responsiva con Flexbox mantiene cada título, descripción y acción dentro de la misma tarjeta visual, apoyando la contigüidad, el acceso lingüístico y una menor carga cognitiva.",
+        profileHeading: "Identidad Profesional y Trayectoria de Investigacion",
+        profileBody: "Soy estudiante de ultimo ano de Estudios Ocupacionales y Tecnicos en la Universidad Old Dominion (GPA de 3.95) e Investigadora Tecnica Principal de El Laboratorio Viviente. Mi trabajo se basa en casi 30 anos de experiencia vivida navegando los sistemas federales de vivienda, los cuales converti en un proyecto de investigacion etnografica formal en el otono de 2025 para mitigar el \"Impuesto de Ancho de Banda\" (Bandwidth Tax). Utilizando codificacion asistida por IA, desarrolle el Validador RFTA, una herramienta de diagnostico presentada oficialmente al OpenAI Codex Creator Challenge. Esta herramienta reemplaza las descargas de informacion de 20 paginas con \"paradas obligatorias\" bilingues para eliminar la \"brecha de firmas\" y evitar la desercion del programa. Mi trayectoria actual incluye presentar esta investigacion en la Expo de Conocimiento y Creatividad de ODU el 22 de abril de 2026, y escalar la iniciativa a traves de la Subvencion de Capacitacion Virginia Housing Flagship de $250,000 y el Desafio Breakthrough de Asequibilidad de Vivienda 2026 de $2 millones.",
+        partnersLabel: "Socios Colaborativos",
+        partnersHeading: "Alianzas Comunitarias y Coordinacion de Subvenciones",
+        partnersBody: "Colaborando con CVRC y RIL para ampliar la investigacion de El Laboratorio Viviente a traves del Desafio Breakthrough de Asequibilidad de Vivienda 2026.",
+        partnerOneTitle: "Central Virginia Resource Corp (CVRC)",
+        partnerOneBody: "Socio regional que apoya la coordinacion, la infraestructura comunitaria y la colaboracion orientada a subvenciones.",
+        partnerTwoTitle: "Richmond Independent Living (RIL)",
+        partnerTwoBody: "Socio comunitario que impulsa la accesibilidad, la vida independiente y la alineacion de la implementacion.",
+        galleryLabel: "Ecosistema de Investigacion",
+        galleryHeading: "Galeria de Herramientas y Archivo",
+        galleryIntro: "Esta galeria responsiva con Flexbox mantiene cada titulo, descripcion y accion dentro de la misma tarjeta visual, apoyando la contiguidad, el acceso linguistico y una menor carga cognitiva.",
         launchButton: "Lanzar Prototipo",
         card1Title: "Validador RFTA",
-        card1Body: "Validador bilingüe para detectar errores críticos y cerrar la brecha de firmas antes de que ocurra la pérdida del beneficio.",
-        card2Title: "Mapa de Fricción Sistémica",
-        card2Body: "Mapa visual de puntos de fricción estructural que desgastan a las familias que navegan sistemas de vivienda.",
+        card1Body: "Validador bilingue para detectar errores criticos y cerrar la brecha de firmas antes de que ocurra la perdida del beneficio.",
+        card2Title: "Mapa de Friccion Sistemica",
+        card2Body: "Mapa visual de puntos de friccion estructural que desgastan a las familias que navegan sistemas de vivienda.",
         card3Title: "Rastreador de Vivienda",
-        card3Body: "Rastreador de investigación diseñado para ampliar la transparencia y mejorar el acceso a oportunidades de vivienda.",
-        card4Title: "Simulación de Estabilidad",
-        card4Body: "Modelo de simulación para explorar cómo pequeñas decisiones crean efectos acumulativos sobre la estabilidad de vivienda.",
+        card3Body: "Rastreador de investigacion disenado para ampliar la transparencia y mejorar el acceso a oportunidades de vivienda.",
+        card4Title: "Simulacion de Estabilidad",
+        card4Body: "Modelo de simulacion para explorar como pequenas decisiones crean efectos acumulativos sobre la estabilidad de vivienda.",
         card5Title: "Calculadora de Impacto Administrativo",
         card5Body: "Calculadora para estimar la carga administrativa oculta creada por procesos complejos.",
         card6Title: "Motor de Hallazgos",
         card6Body: "Motor de hallazgos que traduce observaciones densas en conclusiones legibles y accionables.",
-        card7Title: "Puente Lingüístico",
-        card7Body: "Prototipo de puente lingüístico para mejorar la equidad comunicativa entre agencias y hogares.",
+        card7Title: "Puente Linguistico",
+        card7Body: "Prototipo de puente linguistico para mejorar la equidad comunicativa entre agencias y hogares.",
         card8Title: "Hoja de Ruta de Despliegue",
-        card8Body: "Hoja de ruta de implementación para apoyar el despliegue y la adopción institucional con enfoque humano.",
+        card8Body: "Hoja de ruta de implementacion para apoyar el despliegue y la adopcion institucional con enfoque humano.",
         card9Title: "Prototipo de Estructura Base",
-        card9Body: "Estructura base de aplicación creada para ofrecer claridad, accesibilidad y navegación centrada en tareas.",
-        card10Title: "Desafío del Impuesto de Ancho de Banda",
-        card10Body: "Prototipo conceptual que muestra cómo la fricción administrativa consume recursos cognitivos limitados.",
+        card9Body: "Estructura base de aplicacion creada para ofrecer claridad, accesibilidad y navegacion centrada en tareas.",
+        card10Title: "Desafio del Impuesto de Ancho de Banda",
+        card10Body: "Prototipo conceptual que muestra como la friccion administrativa consume recursos cognitivos limitados.",
         card11Title: "Archivo de Substack",
-        card11Body: "Archivo público de investigación que documenta el progreso, las reflexiones y la evidencia de Living Lab.",
-        footerText: "Mitigando el Impuesto de Ancho de Banda mediante la Tecnología del Desempeño Humano (HPT). Establecido en otoño de 2025."
+        card11Body: "Archivo publico de investigacion que documenta el progreso, las reflexiones y la evidencia de El Laboratorio Viviente.",
+        footerText: "Mitigando el Impuesto de Ancho de Banda mediante la Tecnologia del Desempeno Humano (HPT). Establecido en otono de 2025."
       }
     };
 
