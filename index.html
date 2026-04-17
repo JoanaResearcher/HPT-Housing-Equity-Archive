@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Joana Camp | Lead Technical Researcher</title>
+  <style>
+    :root {
+      --odu-blue: #005073;
+      --odu-blue-dark: #00364d;
+      --crimson: #d32f2f;
+      --crimson-dark: #a92323;
+      --bg: #f4f8fb;
+      --panel: #ffffff;
+      --text: #142430;
+      --muted: #556975;
+      --line: #d7e2e9;
+      --shadow: 0 18px 40px rgba(0, 42, 61, 0.12);
+      --radius: 22px;
+      --header-height: 82px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(0, 80, 115, 0.13), transparent 28%),
+        linear-gradient(180deg, #eef5f8 0%, #f9fbfc 46%, #eef3f7 100%);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: var(--odu-blue);
+      color: #ffffff;
+      box-shadow: 0 8px 24px rgba(0, 42, 61, 0.18);
+    }
+
+    .header-inner {
+      width: min(1180px, calc(100% - 32px));
+      min-height: var(--header-height);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand-block {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .brand-title {
+      font-size: 1.08rem;
+      font-weight: 800;
+      letter-spacing: 0.01em;
+    }
+
+    .brand-subtitle {
+      font-size: 0.94rem;
+      color: rgba(255, 255, 255, 0.9);
+      font-weight: 600;
+    }
+
+    .nav-link {
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      font-weight: 700;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .nav-link:hover,
+    .nav-link:focus-visible,
+    .tool-link:hover,
+    .tool-link:focus-visible {
+      transform: translateY(-1px);
+    }
+
+    .nav-link:hover,
+    .nav-link:focus-visible {
+      background: rgba(255, 255, 255, 0.14);
+    }
+
+    main {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: calc(var(--header-height) + 36px) 0 36px;
+    }
+
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+      margin-bottom: 24px;
+    }
+
+    .hero-panel,
+    .profile-panel,
+    .gallery-panel,
+    .theory-panel {
+      background: rgba(255, 255, 255, 0.97);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-panel {
+      flex: 2 1 640px;
+      padding: 34px;
+      color: #ffffff;
+      background:
+        linear-gradient(135deg, rgba(0, 80, 115, 0.98), rgba(0, 54, 77, 0.96)),
+        var(--odu-blue);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-panel::after {
+      content: "";
+      position: absolute;
+      inset: auto -80px -80px auto;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(211, 47, 47, 0.3), rgba(211, 47, 47, 0));
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      padding: 9px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.14);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .hero-panel h1 {
+      margin: 18px 0 10px;
+      font-size: clamp(2.3rem, 5vw, 4.4rem);
+      line-height: 0.98;
+      letter-spacing: -0.04em;
+      max-width: 10ch;
+    }
+
+    .hero-panel p {
+      margin: 0;
+      max-width: 60ch;
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 1.02rem;
+    }
+
+    .hero-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .chip {
+      padding: 11px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.13);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      font-weight: 700;
+    }
+
+    .theory-panel {
+      flex: 1 1 300px;
+      padding: 28px;
+    }
+
+    .panel-label {
+      margin: 0 0 14px;
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--odu-blue);
+    }
+
+    .theory-panel h2,
+    .profile-panel h2,
+    .gallery-panel h2 {
+      margin: 0 0 14px;
+      font-size: clamp(1.55rem, 3vw, 2.15rem);
+      line-height: 1.1;
+      color: var(--odu-blue-dark);
+    }
+
+    .theory-panel p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .profile-panel,
+    .gallery-panel {
+      padding: 30px;
+      margin-bottom: 24px;
+    }
+
+    .profile-panel {
+      background: #101f29;
+      color: #ffffff;
+    }
+
+    .profile-panel .panel-label {
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    .profile-panel h2 {
+      color: #ffffff;
+    }
+
+    .profile-panel p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.92);
+      font-size: 1rem;
+    }
+
+    .gallery-intro {
+      margin: 0 0 20px;
+      color: var(--muted);
+      max-width: 66ch;
+    }
+
+    .card-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    .tool-card {
+      flex: 1 1 290px;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      padding: 22px;
+      border-radius: 20px;
+      background: linear-gradient(180deg, #ffffff 0%, #f7fafc 100%);
+      border: 1px solid var(--line);
+      box-shadow: 0 14px 30px rgba(0, 42, 61, 0.08);
+    }
+
+    .tool-card h3 {
+      margin: 0 0 10px;
+      font-size: 1.18rem;
+      color: var(--odu-blue-dark);
+    }
+
+    .tool-card p {
+      margin: 0 0 18px;
+      color: var(--muted);
+    }
+
+    .tool-link {
+      margin-top: auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: fit-content;
+      padding: 12px 18px;
+      border-radius: 999px;
+      background: var(--crimson);
+      color: #ffffff;
+      font-weight: 800;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .tool-link:hover,
+    .tool-link:focus-visible {
+      background: var(--crimson-dark);
+    }
+
+    footer {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto 28px;
+      padding-bottom: 20px;
+      text-align: center;
+      color: var(--odu-blue-dark);
+      font-weight: 700;
+    }
+
+    @media (max-width: 900px) {
+      :root {
+        --header-height: 112px;
+      }
+
+      .header-inner {
+        padding: 14px 0;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 720px) {
+      main,
+      footer,
+      .header-inner {
+        width: min(100% - 20px, 100%);
+      }
+
+      .hero-panel,
+      .profile-panel,
+      .gallery-panel,
+      .theory-panel {
+        padding: 22px;
+      }
+
+      .hero-panel h1 {
+        max-width: none;
+      }
+
+      .tool-card {
+        flex-basis: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand-block">
+        <div class="brand-title">Joana Camp | Lead Technical Researcher</div>
+        <div class="brand-subtitle">ODU Senior Training Specialist | 3.95 GPA</div>
+      </div>
+      <a class="nav-link" href="https://substack.com/@livinglabhcv" target="_blank" rel="noreferrer">Research Archive</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-label="Portfolio introduction">
+      <article class="hero-panel">
+        <div class="eyebrow">Professional Portfolio</div>
+        <h1>The Living Lab</h1>
+        <p>
+          Research, technical prototyping, and human performance inquiry focused on housing systems, administrative friction,
+          and AI-supported regulatory tools for vulnerable populations.
+        </p>
+        <div class="hero-chips">
+          <div class="chip">Human Performance Technology</div>
+          <div class="chip">Housing Systems Research</div>
+          <div class="chip">AI-Assisted Coding</div>
+        </div>
+      </article>
+
+      <aside class="theory-panel" aria-labelledby="theory-heading">
+        <p class="panel-label">Design Theory Implementation</p>
+        <h2 id="theory-heading">Mayer's Contiguity Principles</h2>
+        <p>
+          Descriptions and action buttons are grouped within each tool card to reduce the Split-Attention Effect and keep
+          context, language access, and interaction closely aligned.
+        </p>
+      </aside>
+    </section>
+
+    <section class="profile-panel" aria-labelledby="profile-heading">
+      <p class="panel-label">The Professional Profile</p>
+      <h2 id="profile-heading">Professional Identity &amp; Research Trajectory</h2>
+      <p>
+        "I am an Occupational and Technical Studies Senior at Old Dominion University (3.95 GPA) and the Lead Technical Researcher for The Living Lab. My work is grounded in nearly 30 years of lived experience navigating federal housing systems, which I transitioned into a formal ethnographic research project in Fall 2025 to mitigate the 'Bandwidth Tax'--the 30% drain on cognitive resources caused by administrative friction. Using AI-assisted coding, I developed the RFTA Validator, a diagnostic tool officially submitted to the OpenAI Codex Creator Challenge via Handshake. This tool replaces 20-page 'Information Dumps' with bilingual 'Hard Stops' to eliminate the 'Signature Gap' and prevent program attrition. My current trajectory involves presenting this research at the ODU Knowledge & Creativity Expo on April 22, 2026, and scaling the initiative through the $250,000 Virginia Housing Flagship Training Grant and the $2 million 2026 Housing Affordability Breakthrough Challenge (due May 15). I am preparing for doctoral studies in Human Performance Technology (HPT) to investigate AI-driven regulatory compliance for vulnerable populations."
+      </p>
+    </section>
+
+    <section class="gallery-panel" aria-labelledby="ecosystem-heading">
+      <p class="panel-label">The Research Ecosystem</p>
+      <h2 id="ecosystem-heading">Tool and Archive Gallery</h2>
+      <p class="gallery-intro">
+        This responsive Flexbox card gallery keeps each title, Heritage Spanish subtitle, and launch action within one visual
+        unit to support clarity, continuity, and accessible decision-making.
+      </p>
+
+      <div class="card-grid">
+        <article class="tool-card">
+          <h3>RFTA Validator</h3>
+          <p>Validador bilingue para detectar errores criticos y cerrar la brecha de firma antes de la perdida del beneficio.</p>
+          <a class="tool-link" href="https://joanaresearcher.github.io/the-living-lab/" target="_blank" rel="noreferrer">Launch Tool</a>
+        </article>
+
+        <article class="tool-card">
+          <h3>Systemic Friction Map</h3>
+          <p>Mapa de friccion sistemica para hacer visibles las barreras estructurales que desgastan a las familias.</p>
+          <a class="tool-link" href="https://joanaresearcher.github.io/The-Living-Lab-Systemic-Friction-Map/" target="_blank" rel="noreferrer">Launch Tool</a>
+        </article>
+
+        <article class="tool-card">
+          <h3>Housing Tracker</h3>
+          <p>Herramienta de seguimiento para ampliar la transparencia y el acceso a oportunidades de vivienda.</p>
+          <a class="tool-link" href="https://joanaresearcher.github.io/housing-tracker-research/" target="_blank" rel="noreferrer">Launch Tool</a>
+        </article>
+
+        <article class="tool-card">
+          <h3>Stability Simulation</h3>
+          <p>Simulacion investigativa para explorar como pequenas decisiones alteran la estabilidad habitacional.</p>
+          <a class="tool-link" href="https://joanaresearcher.github.io/The_Living_Lab_Systemic_Stability_Simulation/" target="_blank" rel="noreferrer">Launch Tool</a>
+        </article>
+
+        <article class="tool-card">
+          <h3>Administrative Impact Calculator</h3>
+          <p>Calculadora de impacto administrativo para medir la carga oculta creada por procesos complejos.</p>
+          <a class="tool-link" href="https://joanaresearcher.github.io/The-Living-Lab-Administrative-Impact-Calculator/" target="_blank" rel="noreferrer">Launch Tool</a>
+        </article>
+
+        <article class="tool-card">
+          <h3>Insight Engine</h3>
+          <p>Motor de hallazgos para traducir observaciones densas en interpretaciones utiles y accionables.</p>
+          <a class="tool-link" href="https://joanaresearcher.github.io/-Living-Lab-Insight-Engine/" target="_blank" rel="noreferrer">Launch Tool</a>
+        </article>
+
+        <article class="tool-card">
+          <h3>Linguistic Bridge</h3>
+          <p>Puente linguistico para reforzar la equidad comunicativa entre agencias, investigadores y residentes.</p>
+          <a class="tool-link" href="https://joanaresearcher.github.io/The-Living-Lab-Linguistic-Bridge/" target="_blank" rel="noreferrer">Launch Tool</a>
+        </article>
+
+        <article class="tool-card">
+          <h3>Deployment Roadmap</h3>
+          <p>Hoja de ruta de implementacion para apoyar la adopcion institucional de soluciones con enfoque humano.</p>
+          <a class="tool-link" href="https://joanaresearcher.github.io/Teaching-Agency-Deployment-Roadmap/" target="_blank" rel="noreferrer">Launch Tool</a>
+        </article>
+
+        <article class="tool-card">
+          <h3>App Shell Prototype</h3>
+          <p>Prototipo base para una experiencia clara, accesible y organizada alrededor de tareas esenciales.</p>
+          <a class="tool-link" href="https://joanaresearcher.github.io/RFTA_APP_SHELL_PROTOTYPE01/" target="_blank" rel="noreferrer">Launch Tool</a>
+        </article>
+
+        <article class="tool-card">
+          <h3>Bandwidth Tax Challenge</h3>
+          <p>Desafio conceptual que demuestra como la friccion administrativa consume recursos cognitivos limitados.</p>
+          <a class="tool-link" href="https://joanaresearcher.github.io/The-Bandwidth-Tax-Challenge/" target="_blank" rel="noreferrer">Launch Tool</a>
+        </article>
+
+        <article class="tool-card">
+          <h3>Substack Archive</h3>
+          <p>Archivo de investigacion para documentar avances, reflexiones y evidencia publica del ecosistema Living Lab.</p>
+          <a class="tool-link" href="https://substack.com/@livinglabhcv" target="_blank" rel="noreferrer">Launch Tool</a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Mitigating the Bandwidth Tax through Human Performance Technology (HPT). Established Fall 2025.
+  </footer>
+</body>
+</html>
