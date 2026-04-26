@@ -1,7 +1,7 @@
 # The Living Lab: HPT Housing Equity Archive
 
 ## 🌐 Research Ecosystem Overview
-This repository serves as the **Technical Research Hub** and **Security Archive** for *The Living Lab*. Grounded in nearly 30 years of longitudinal ethnographic data, this ecosystem transitions systemic auditing into scalable **Human Performance Technology (HPT)** interventions. 
+This repository serves as the **Technical Research Hub** and **Security Archive** for *The Living Lab*. This ecosystem transitions **30 years of longitudinal ethnographic data** into a formal research study (established Fall 2025) focused on scalable **Human Performance Technology (HPT)** interventions. 
 
 Our mission is to dismantle the **"Bandwidth Tax"**—the cognitive and procedural burden imposed on low-income families navigating federal housing assistance—through secure, digital-first infrastructure.
 
@@ -19,10 +19,10 @@ This Archive manages a unified suite of **10 high-fidelity HPT prototypes** supp
 
 ### **Core Technical Prototypes**
 1.  **RFTA Validator:** Diagnostic tool replacing 20-page federal packets with bilingual logic-checks.
-2.  **Systemic Friction Map:** HPT diagnostic tool visualizing 28 years of institutional bottlenecks.
+2.  **Systemic Friction Map:** HPT diagnostic tool visualizing 30 years of institutional bottlenecks.
 3.  **Stability Simulation:** Bilingual character-driven simulation to navigate administrative "Hard Stops."
 4.  **Housing Tracker:** Real-time web app for national voucher program accessibility.
-5.  **Administrative Impact Calculator:** Tool quantifying the 30% resource drain identified in longitudinal studies.
+5.  **Administrative Impact Calculator:** Tool quantifying the 30% resource drain identified in our study.
 6.  **Linguistic Bridge:** High-visibility signaling prototype for non-English primary households.
 7.  **Insight Engine:** AI-driven platform synthesizing qualitative ethnographic data.
 8.  **Agency Deployment Roadmap:** 12-month strategy for "Teaching Agency" transitions.
@@ -30,8 +30,8 @@ This Archive manages a unified suite of **10 high-fidelity HPT prototypes** supp
 10. **Bandwidth Tax Challenge:** Professional simulation of move-in logistics under scarcity.
 
 ### **Foundational Research Anchors**
-* **30-Year Research Narrative:** A longitudinal ethnographic archive of systemic intervention.
-* **Substack Archive:** Digital repository of narrative research and strategic updates.
+* **30-Year Research Narrative:** A longitudinal ethnographic archive documenting the transition from lived experience to formal study.
+* **Substack Archive:** Digital repository of narrative research, established in Fall 2025.
 
 ---
 
@@ -47,7 +47,7 @@ As part of our **Security-by-Design** posture, this repository prioritizes:
 The design of this hub and its linked prototypes are guided by:
 * **Human Performance Technology (HPT):** Systematic investigation of performance gaps.
 * **Mayer’s Cognitive Theory of Multimedia Learning:** Reducing the "Split-Attention Effect" through card-based signaling.
-* **Ethnographic Auditing:** Utilizing lived experience as primary data for technical requirements.
+* **Ethnographic Auditing:** Utilizing 30 years of lived experience as primary data for formal technical requirements (Study formalized Fall 2025).
 
 ---
 
