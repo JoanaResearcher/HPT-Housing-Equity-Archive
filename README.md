@@ -1,7 +1,7 @@
 # The Living Lab: HPT Housing Equity Archive
 
 ## 🌐 Research Ecosystem Overview
-This repository serves as the **Technical Research Hub** and **Security Archive** for *The Living Lab*. This ecosystem transitions **30 years of longitudinal ethnographic data** into a formal research study (established Fall 2025) focused on scalable **Human Performance Technology (HPT)** interventions. 
+This repository serves as the **Technical Research Hub** and **Security Archive** for *The Living Lab*. This ecosystem transitions **almost 30 years of lived experience and longitudinal ethnographic data** into a formal research study (established Fall 2025) focused on scalable **Human Performance Technology (HPT)** interventions. 
 
 Our mission is to dismantle the **"Bandwidth Tax"**—the cognitive and procedural burden imposed on low-income families navigating federal housing assistance—through secure, digital-first infrastructure.
 
@@ -31,7 +31,7 @@ This Archive manages a unified suite of **10 high-fidelity HPT prototypes** supp
 
 ### **Foundational Research Anchors**
 * **30-Year Research Narrative:** A longitudinal ethnographic archive documenting the transition from lived experience to formal study.
-* **Substack Archive:** Digital repository of narrative research, established in Fall 2025.
+* **Substack Archive:** Digital repository of narrative research and strategic updates (Established Fall 2025).
 
 ---
 
@@ -47,7 +47,7 @@ As part of our **Security-by-Design** posture, this repository prioritizes:
 The design of this hub and its linked prototypes are guided by:
 * **Human Performance Technology (HPT):** Systematic investigation of performance gaps.
 * **Mayer’s Cognitive Theory of Multimedia Learning:** Reducing the "Split-Attention Effect" through card-based signaling.
-* **Ethnographic Auditing:** Utilizing 30 years of lived experience as primary data for formal technical requirements (Study formalized Fall 2025).
+* **Ethnographic Auditing:** Utilizing **almost 30 years of lived experience** as primary data for formal technical requirements (Formalized Study: Fall 2025).
 
 ---
 
