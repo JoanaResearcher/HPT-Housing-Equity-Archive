@@ -1,64 +1,30 @@
 # The Living Lab: HPT Housing Equity Archive
 
 ## 🌐 Research Ecosystem Overview
-This repository serves as the **Technical Research Hub** and **Security Archive** for *The Living Lab*. This ecosystem transitions **almost 30 years of lived experience and longitudinal ethnographic data** into a formal research study (established Fall 2025) focused on scalable **Human Performance Technology (HPT)** interventions. 
+This repository serves as the technical research hub and documentation archive for **The Living Lab**, an early‑stage applied research initiative examining administrative burden, cognitive load, and workflow friction within federally regulated housing systems. The ecosystem translates nearly 30 years of lived experience navigating the Housing Choice Voucher program into structured sociotechnical inquiry and accessibility‑centered design concepts.
 
-Our mission is to dismantle the **"Bandwidth Tax"**—the cognitive and procedural burden imposed on low-income families navigating federal housing assistance—through secure, digital-first infrastructure.
+Our mission is to reduce the “Bandwidth Tax” — the cognitive and procedural strain placed on low‑income households navigating complex housing processes — through digital‑first, human‑centered, and linguistically accessible design approaches.
 
 ---
 
 ## 👤 Professional Identity
-* **Lead Researcher & PI:** Joana Camp
-* **Institutional Alignment:** Old Dominion University (B.S. Occupational & Technical Studies, 3.95 GPA)
-* **Specialization:** Training Systems, Behavioral Design, & Administrative Security
+**Lead Systems Researcher:** Joana Camp  
+**Institutional Alignment:** Old Dominion University (B.S. Occupational & Technical Studies, GPA 3.97)  
+**Focus Areas:** Human Performance Technology (HPT), workflow clarity, accessibility-centered design, sociotechnical systems analysis
 
 ---
 
-## 🛠 The Technical Ecosystem (10+2 Structure)
-This Archive manages a unified suite of **10 high-fidelity HPT prototypes** supported by **two foundational research anchors**.
+## 🛠 Technical Ecosystem Overview
+This archive organizes a suite of early‑stage prototypes and conceptual tools developed to explore how digital-first interventions might reduce administrative friction and improve usability for voucher participants. These prototypes are **exploratory**, **non‑implemented**, and serve as design research artifacts.
 
-### **Core Technical Prototypes**
-1.  **RFTA Validator:** Diagnostic tool replacing 20-page federal packets with bilingual logic-checks.
-2.  **Systemic Friction Map:** HPT diagnostic tool visualizing 30 years of institutional bottlenecks.
-3.  **Stability Simulation:** Bilingual character-driven simulation to navigate administrative "Hard Stops."
-4.  **Housing Tracker:** Real-time web app for national voucher program accessibility.
-5.  **Administrative Impact Calculator:** Tool quantifying the 30% resource drain identified in our study.
-6.  **Linguistic Bridge:** High-visibility signaling prototype for non-English primary households.
-7.  **Insight Engine:** AI-driven platform synthesizing qualitative ethnographic data.
-8.  **Agency Deployment Roadmap:** 12-month strategy for "Teaching Agency" transitions.
-9.  **App Shell Prototype:** Functional navigation structure for the RFTA framework.
-10. **Bandwidth Tax Challenge:** Professional simulation of move-in logistics under scarcity.
-
-### **Foundational Research Anchors**
-* **30-Year Research Narrative:** A longitudinal ethnographic archive documenting the transition from lived experience to formal study.
-* **Substack Archive:** Digital repository of narrative research and strategic updates (Established Fall 2025).
-
----
-
-## 🔐 Security & Data Integrity
-As part of our **Security-by-Design** posture, this repository prioritizes:
-* **Administrative Security:** Mitigating supply-chain risks in federal data processing.
-* **Linguistic Equity:** Secure, UTF-8 compliant bilingual interfaces to eliminate the "Signature Gap."
-* **Zero-Trust PII Handling:** Architecting workflows that protect vulnerable applicant data while maintaining regulatory compliance (FY 2026 HUD Standards).
-
----
-
-## 📈 Methodology & Theoretical Framework
-The design of this hub and its linked prototypes are guided by:
-* **Human Performance Technology (HPT):** Systematic investigation of performance gaps.
-* **Mayer’s Cognitive Theory of Multimedia Learning:** Reducing the "Split-Attention Effect" through card-based signaling.
-* **Ethnographic Auditing:** Utilizing **almost 30 years of lived experience** as primary data for formal technical requirements (Formalized Study: Fall 2025).
-
----
-
-## 🚀 Active Trajectory
-* **Targeting:** $2M 2026 Housing Affordability Breakthrough Challenge.
-* **Targeting:** $250,000 Virginia Housing Flagship Training Grant.
-* **Nominee:** GitHub Secure Open Source Fund (2026 Session).
-
----
-
-## 🔗 Project Links
-* **Interactive Research Gallery:** [Launch Archive](https://joanaresearcher.github.io/HPT-Housing-Equity-Archive/)
-* **Background & Longitudinal Series:** [View Google Site](https://sites.google.com/view/the-living-lab-series-rfta/home)
-* **Public Research Journal:** [Subscribe on Substack](https://substack.com/@livinglabhcv)
+### Core Conceptual Prototypes
+- **RFTA Validator:** Early-stage concept for bilingual logic‑checks that help users identify missing fields and signatures.  
+- **Systemic Friction Map:** Visual model highlighting institutional bottlenecks and cognitive load points across the voucher journey.  
+- **Stability Simulation:** Character-driven bilingual simulation illustrating “hard stops” families encounter during the RFTA window.  
+- **Housing Tracker:** Conceptual web tool mapping national voucher program openings.  
+- **Administrative Impact Calculator:** Prototype exploring how documentation errors contribute to administrative rework.  
+- **Linguistic Bridge:** High‑visibility signaling concept designed to reduce linguistic friction for non‑English primary households.  
+- **Insight Engine:** Exploratory AI-assisted concept for synthesizing qualitative patterns in administrative failure points.  
+- **Agency Deployment Roadmap:** Draft strategy outlining how housing authorities could transition toward “Teaching Agency” models.  
+- **App Shell Prototype:** Navigation framework for a modernized RFTA workflow interface.  
+- **Bandwidth Tax Challenge:** Simulation illustrating cognitive strain
